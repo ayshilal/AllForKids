@@ -1,8 +1,8 @@
 ---
-name: Feature request
+name: WebAPI Bug Fix
 about: Suggest an idea for this project
-title: ''
-labels: ''
+title: 'WebAPI - Bug :'
+labels: bug
 assignees: ''
 
 ---
