@@ -1,6 +1,6 @@
 ---
 name: WebAPI Bug Fix
-about: Suggest an idea for this project
+about: Report a bug for this project
 title: 'WebAPI - Bug :'
 labels: bug
 assignees: ''
