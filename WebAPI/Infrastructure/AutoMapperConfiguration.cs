@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Service.Category.Model;
 using Service.Product.Model;
+using WebApi.Models.Category;
 using WebApi.Models.Product;
 
 namespace WebApi.Infrastructure
@@ -19,6 +21,9 @@ namespace WebApi.Infrastructure
                 cfg.CreateMap<ProductDtoEditModel, ProductEditModel>().ReverseMap();
                 cfg.CreateMap<ProductDtoSearchModel, ProductSearchModel>().ReverseMap();      
                 cfg.CreateMap<ProductDtoViewModel, ProductGridModel>().ReverseMap();
+                cfg.CreateMap<CategoryDtoEditModel, CategoryEditModel>().ReverseMap();
+                cfg.CreateMap<CategoryDtoSearchModel, CategorySearchModel>().ReverseMap();
+                cfg.CreateMap<CategoryDtoViewModel, CategoryGridModel>().ReverseMap();
             });
             _mapper = _mapperConfiguration.CreateMapper();
         }

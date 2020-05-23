@@ -4,14 +4,16 @@ using EntityLibrary;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EntityLibrary.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200519020643_MigrationFive")]
+    partial class MigrationFive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,10 +53,6 @@ namespace EntityLibrary.Migrations
                         .HasColumnName("LAST_UPDATE_USER_ID")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Name")
-                        .HasColumnName("NAME")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Path")
                         .HasColumnName("PATH")
                         .HasColumnType("nvarchar(max)");
@@ -73,7 +71,7 @@ namespace EntityLibrary.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Category");
+                    b.ToTable("Category","ApplicationDB");
                 });
 
             modelBuilder.Entity("EntityLibrary.Model.Customer", b =>

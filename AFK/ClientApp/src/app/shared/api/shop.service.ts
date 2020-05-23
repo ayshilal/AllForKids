@@ -72,12 +72,12 @@ export class ShopService {
          * - parent = parent.slug
          * - depth  = depth
          */
-        // const params: {[param: string]: string} = {
-        //     parent: parent.slug,
-        //     depth: depth.toString(),
-        // };
-        //
-        // return this.http.get<Category[]>('https://example.com/api/shop/categories.json', {params});
+     const params: {[param: string]: string} = {
+            parent: parent.slug,
+             depth: depth.toString(),
+         };
+        
+         return this.http.get<Category[]>('https://localhost:44381/api/category');
 
         // This is for demonstration purposes only. Remove it and use the code above.
         return getShopCategoriesTree(parent ? parent.slug : null, depth);

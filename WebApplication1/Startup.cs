@@ -12,8 +12,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Service.Category;
-using Service.Category.Atom;
 using Service.Product;
 using Service.Product.Atom;
 using Service.UnitOfWork;
@@ -40,7 +38,6 @@ namespace WebApi
             AutoMapperConfiguration.Init();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductRepository, ProductService>();
-            services.AddScoped<ICategoryRepository, CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

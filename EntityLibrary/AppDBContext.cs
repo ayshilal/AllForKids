@@ -30,6 +30,7 @@ namespace EntityLibrary
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Purchase> Purchase { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>(entity =>
@@ -95,7 +96,32 @@ namespace EntityLibrary
                 //   .HasConstraintName("FK_CUSTOMER_LASTUPDATEUSER");
 
             });
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.ToTable("Category");
 
+                entity.Property(e => e.ID).HasColumnName("ID");
+                entity.Property(e => e.Name).HasColumnName("NAME");
+                entity.Property(e => e.Type).HasColumnName("TYPE");
+                entity.Property(e => e.Slug).HasColumnName("SLUG");
+                entity.Property(e => e.Path).HasColumnName("PATH");
+                entity.Property(e => e.Image).HasColumnName("IMAGE");
+                entity.Property(e => e.Items).HasColumnName("ITEMS");
+
+                entity.Property(e => e.InsertDate)
+                   .HasColumnName("INSERT_DATE")
+                   .HasColumnType("datetime");
+
+                entity.Property(e => e.InsertUserId).HasColumnName("INSERT_USER_ID");
+
+                entity.Property(e => e.LastUpdateDate)
+                   .HasColumnName("LAST_UPDATE_DATE")
+                   .HasColumnType("datetime");
+
+                entity.Property(e => e.LastUpdateUserId).HasColumnName("LAST_UPDATE_USER_ID");
+
+                entity.Property(e => e.Status).HasColumnName("STATUS");
+            });
         }
     }
 }

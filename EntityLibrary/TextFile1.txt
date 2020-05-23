@@ -1,0 +1,13 @@
+﻿commands
+1- önce migrationı bu command'le ekleyip sonra 2 numaralı command'le db'yi 
+update ediyoruz.
+
+dotnet ef migrations add MigrationFive --project EntityLibrary
+
+2- 
+dotnet ef database update --project EntityLibrary
+
+-- category table, name field added 
+dotnet ef migrations add MigrationSix --project EntityLibrary
+dotnet ef database update --project EntityLibrary
+

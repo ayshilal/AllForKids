@@ -1,6 +1,8 @@
 ﻿using CommonType;
 using CommonTypes.Response;
 using EntityLibrary;
+using Service.Category;
+using Service.Category.Atom;
 using Service.Product;
 using Service.Product.Atom;
 using Service.Repository;
@@ -28,7 +30,11 @@ namespace Service.UnitOfWork
         private IProductRepository _productRepository;
 
         public IProductRepository ProductRepository { get { return _productRepository ?? (_productRepository = new ProductService(context)); } }
-       
+
+
+        private ICategoryRepository _categoryRepository;
+
+        public ICategoryRepository CategoryRepository { get { return _categoryRepository ?? (_categoryRepository = new CategoryService(context)); } }
 
 
         public IGenericRepository<T> Repository<T>() where T : class

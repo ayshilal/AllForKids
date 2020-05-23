@@ -1,10 +1,10 @@
 ﻿
 using CommonType;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Service.Product;
-using WebApi.Extensions.Product;
-using WebApi.Models.Product;
+using Service.Category;
+using WebApi.Models.Category;
+
+using WebApi.Extensions.Category;
 
 namespace WebApi.Controllers
 {
@@ -12,20 +12,20 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     //[Authorize]
 
-    public class ProductController : BaseController
+    public class CategoryController : BaseController
     {
-        private readonly IProductRepository _ProductRepository;
+        private readonly ICategoryRepository _CategoryRepository;
 
-        public ProductController(IProductRepository ProductRepository)
+        public CategoryController(ICategoryRepository CategoryRepository)
         {
-            _ProductRepository = ProductRepository;
+            _CategoryRepository = CategoryRepository;
         }
 
         [HttpGet]
-        public IActionResult Get(ProductSearchModel model)
+        public IActionResult Get(CategorySearchModel model)
         {
-            var Products = _ProductRepository.Get(model.ToSearchModel());
-            return Successful(Products);
+            var Category = _CategoryRepository.Get(model.ToSearchModel());
+            return Successful(Category);
         }
 
         //[HttpGet]
@@ -38,26 +38,28 @@ namespace WebApi.Controllers
         [HttpGet("GetAll")]
         public IActionResult Get()
         {
-            var Products = _ProductRepository.GetAll();
+            var Products = _CategoryRepository.GetAll();
             return Successful(Products);
         }
+
+
 
         [HttpGet("{id}")]
         public IActionResult Get(long id)
         {
-            var Product = _ProductRepository.GetById(id);
-            if (Product.Data == null)
+            var Category = _CategoryRepository.GetById(id);
+            if (Category.Data == null)
                 return NoDataFound();
-            return Successful(Product);
+            return Successful(Category);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] ProductEditModel model)
+        public IActionResult Post([FromBody] CategoryEditModel model)
         {
             if (ModelState.IsValid)
             {
 
-                var response = _ProductRepository.Create(model.ToEntity());
+                var response = _CategoryRepository.Create(model.ToEntity());
                 if (response.ResponseCode == ResponseCode.SUCCESSFUL)
                 {
                     return Successful(ResponseMessage.SUCCESSFUL);
@@ -70,14 +72,16 @@ namespace WebApi.Controllers
             return Errors(ModelState);
         }
 
+
+
         [HttpPut("{id:long}")]
-        public IActionResult Put(long id, [FromBody] ProductEditModel model)
+        public IActionResult Put(long id, [FromBody] CategoryEditModel model)
         {
             if (ModelState.IsValid)
             {
                 model.Id = id;
 
-                var response = _ProductRepository.Update(model.ToEntity());
+                var response = _CategoryRepository.Update(model.ToEntity());
                 if (response.ResponseCode == ResponseCode.SUCCESSFUL)
                 {
                     return Successful(ResponseMessage.SUCCESSFUL);
@@ -89,5 +93,7 @@ namespace WebApi.Controllers
             }
             return Errors(ModelState);
         }
+
+
     }
 }
