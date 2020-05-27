@@ -20,6 +20,8 @@ import { PageProfileComponent } from './pages/page-profile/page-profile.componen
 import { PageOrderDetailsComponent } from './pages/page-order-details/page-order-details.component';
 import { PageEditAddressComponent } from './pages/page-edit-address/page-edit-address.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
     declarations: [
         // components
@@ -39,7 +41,9 @@ import { PageEditAddressComponent } from './pages/page-edit-address/page-edit-ad
         CommonModule,
         // modules
         AccountRoutingModule,
-        SharedModule
+        SharedModule,
+
+        ReactiveFormsModule
     ]
 })
 export class AccountModule { }

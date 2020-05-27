@@ -31,6 +31,7 @@ import { PageHomeOneComponent } from './pages/page-home-one/page-home-one.compon
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageHomeTwoComponent } from './pages/page-home-two/page-home-two.component';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -58,7 +59,8 @@ import { PageHomeTwoComponent } from './pages/page-home-two/page-home-two.compon
         HeaderModule,
         MobileModule,
         SharedModule,
-        WidgetsModule
+        WidgetsModule,
+        HttpClientModule
     ],
     providers: [
         // { provide: LOCALE_ID, useValue: 'it' }
