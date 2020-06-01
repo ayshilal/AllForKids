@@ -23,6 +23,7 @@ namespace WebApi
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,11 +34,23 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:4200")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
+                                  });
+            });
 
+            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            
             services.AddControllers();
 
             AutoMapperConfiguration.Init();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductRepository, ProductService>();
             services.AddScoped<ICategoryRepository, CategoryService>();
@@ -52,9 +65,9 @@ namespace WebApi
             }
 
             app.UseHttpsRedirection();
-
+  
             app.UseRouting();
-
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

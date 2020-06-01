@@ -3,13 +3,15 @@ import { Component,OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { AccountService } from '../../../../services/account.service';
+import { Service } from '../../../../services/service';
+import { ResponseSerializer } from '../../../../serializer/response.serializer';
 
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./page-login.component.scss']
+    styleUrls: ['./page-login.component.scss'],
+    providers: [Service, ResponseSerializer]
 })
 export class PageLoginComponent implements OnInit
  {
@@ -22,7 +24,7 @@ export class PageLoginComponent implements OnInit
     constructor( private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private accountService: AccountService) { }
+        private accountService: Service) { }
         ngOnInit() {
             this.form = this.formBuilder.group({
                 username: ['', Validators.required],
@@ -44,7 +46,7 @@ export class PageLoginComponent implements OnInit
             }
     
             this.loading = true;
-            this.accountService.login(this.f.username.value, this.f.password.value)
+            this.accountService.getResponseList()
                 .pipe(first())
                 .subscribe(
                     data => {

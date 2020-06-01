@@ -32,6 +32,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { PageHomeTwoComponent } from './pages/page-home-two/page-home-two.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
+import { Service } from './services/service';
 
 @NgModule({
     declarations: [
@@ -63,6 +66,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
         HttpClientModule
     ],
     providers: [
+        Service,
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
         // { provide: LOCALE_ID, useValue: 'it' }
     ],
     bootstrap: [AppComponent]

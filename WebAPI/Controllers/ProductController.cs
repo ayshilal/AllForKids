@@ -8,10 +8,10 @@ using WebApi.Models.Product;
 
 namespace WebApi.Controllers
 {
-    //[EnableCors("AllowSpecificOrigin")]
+    
     [Route("api/[controller]")]
     //[Authorize]
-
+    [EnableCors("_myAllowSpecificOrigins")]
     public class ProductController : BaseController
     {
         private readonly IProductRepository _ProductRepository;
