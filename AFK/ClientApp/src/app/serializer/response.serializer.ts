@@ -78,8 +78,8 @@ export class ResponseSerializer {
     if (typeof res.body.Result === 'undefined') {
       response.RespCode = res.status;
       response.RespMessage = res.statusText;
-      response.TotalCount = res.body.Result.TotalCount;
-      response.Data = res.body.Result.Data;
+      //response.TotalCount = res.body.Result.TotalCount;
+      response.Data = res.body.result;
       return response;
     }
     else {

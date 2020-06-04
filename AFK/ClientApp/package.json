@@ -29,6 +29,7 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@nguniversal/express-engine": "^9.0.0",
     "bootstrap": "^4.4.1",
+    "es6-promise": "^4.2.8",
     "express": "^4.17.1",
     "ng5-slider": "^1.2.4",
     "ngx-bootstrap": "^5.3.2",

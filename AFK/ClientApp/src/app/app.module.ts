@@ -34,7 +34,9 @@ import { PageHomeTwoComponent } from './pages/page-home-two/page-home-two.compon
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-import { Service } from './services/service';
+import { ProductService } from './services/product.service';
+import { QueryOptions } from './serializer/queryoptions.serializer';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
     declarations: [
@@ -66,7 +68,9 @@ import { Service } from './services/service';
         HttpClientModule
     ],
     providers: [
-        Service,
+        ProductService,
+        QueryOptions,
+        AuthenticationService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
         // { provide: LOCALE_ID, useValue: 'it' }
