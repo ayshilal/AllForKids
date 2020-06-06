@@ -8,7 +8,7 @@
 
 .nav-panel {
     height: $nav-panel-height;
-    background: $nav-panel-bg;
+    //background: $nav-panel-bg;
     box-shadow: $nav-panel-shadow;
     color: $nav-panel-font-color;
 }
@@ -31,6 +31,8 @@
 .nav-panel__logo svg {
     display: block;
     fill: $nav-panel-logo-color;
+    max-width: 100%;
+    height: auto;
 }
 .nav-panel__departments {
     flex-shrink: 0;
