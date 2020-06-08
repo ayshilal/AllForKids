@@ -69,17 +69,17 @@ export class PageHomeOneComponent implements OnInit, OnDestroy {
                     products$: this.shop.getFeaturedProducts(null, 8),
                 },
                 {
-                    name: 'Power Tools',
+                    name: 'Clothing',
                     current: false,
                     products$: this.shop.getFeaturedProducts('power-tools', 8),
                 },
                 {
-                    name: 'Hand Tools',
+                    name: 'Toys',
                     current: false,
                     products$: this.shop.getFeaturedProducts('hand-tools', 8),
                 },
                 {
-                    name: 'Plumbing',
+                    name: 'Books',
                     current: false,
                     products$: this.shop.getFeaturedProducts('plumbing', 8),
                 },
@@ -98,17 +98,17 @@ export class PageHomeOneComponent implements OnInit, OnDestroy {
                     products$: this.shop.getLatestProducts(null, 8),
                 },
                 {
-                    name: 'Power Tools',
+                    name: 'Clothing',
                     current: false,
                     products$: this.shop.getLatestProducts('power-tools', 8),
                 },
                 {
-                    name: 'Hand Tools',
+                    name: 'Toys',
                     current: false,
                     products$: this.shop.getLatestProducts('hand-tools', 8),
                 },
                 {
-                    name: 'Plumbing',
+                    name: 'Books',
                     current: false,
                     products$: this.shop.getLatestProducts('plumbing', 8),
                 },

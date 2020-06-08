@@ -1,7 +1,7 @@
 import { NavigationLink } from '../app/shared/interfaces/navigation-link';
 
 export const departments: NavigationLink[] = [
-    {label: 'Power Tools', url: '/shop/catalog', menu: {
+    {label: 'Girl ', url: '/shop/catalog', menu: {
         type: 'megamenu',
         size: 'xl',
         image: 'assets/images/megamenu/megamenu-1.jpg',
@@ -57,7 +57,7 @@ export const departments: NavigationLink[] = [
             ]}
         ]
     }},
-    {label: 'Hand Tools', url: '/shop/catalog', menu: {
+    {label: 'Boy', url: '/shop/catalog', menu: {
         type: 'megamenu',
         size: 'lg',
         image: 'assets/images/megamenu/megamenu-2.jpg',
@@ -98,7 +98,7 @@ export const departments: NavigationLink[] = [
             ]}
         ]
     }},
-    {label: 'Machine Tools', url: '/shop/catalog', menu: {
+    {label: 'Baby Girl', url: '/shop/catalog', menu: {
         type: 'megamenu',
         size: 'nl',
         image: 'assets/images/megamenu/megamenu-3.jpg',
@@ -129,7 +129,7 @@ export const departments: NavigationLink[] = [
             ]}
         ]
     }},
-    {label: 'Building Supplies', url: '/shop/catalog', menu: {
+    {label: 'Baby Boy', url: '/shop/catalog', menu: {
         type: 'megamenu',
         size: 'sm',
         columns: [
@@ -151,7 +151,7 @@ export const departments: NavigationLink[] = [
             ]}
         ]
     }},
-    {label: 'Electrical', url: '/shop/catalog', menu: {
+    {label: 'Mini', url: '/shop/catalog', menu: {
         type: 'menu',
         items: [
             {label: 'Soldering Equipment', url: '/shop/catalog', items: [
@@ -168,10 +168,8 @@ export const departments: NavigationLink[] = [
             {label: 'UPS', url: '/shop/catalog'}
         ]
     }},
-    {label: 'Power Machinery',        url: '/shop/catalog'},
-    {label: 'Measurement',            url: '/shop/catalog'},
-    {label: 'Clothes & PPE',          url: '/shop/catalog'},
-    {label: 'Plumbing',               url: '/shop/catalog'},
-    {label: 'Storage & Organization', url: '/shop/catalog'},
-    {label: 'Welding & Soldering',    url: '/shop/catalog'}
+    {label: 'Accessories',        url: '/shop/catalog'},
+    {label: 'Mom',        url: '/shop/catalog'},
+    {label: 'Books & Toys',            url: '/shop/catalog'},
+    {label: 'Home',          url: '/shop/catalog'},
 ];
