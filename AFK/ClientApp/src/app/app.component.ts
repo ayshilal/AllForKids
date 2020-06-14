@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { isPlatformBrowser, ViewportScroller } from '@angular/common';
 import { CurrencyService } from './shared/services/currency.service';
 import { filter, first } from 'rxjs/operators';
-
+import {BottomNavItem} from 'ngx-bottom-nav';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -39,6 +39,8 @@ export class AppComponent implements OnInit {
                 });
             });
         }
+
+     
     }
 
     ngOnInit(): void {
@@ -67,4 +69,9 @@ export class AppComponent implements OnInit {
             this.toastr.success(`Product "${product.name}" added to wish list!`);
         });
     }
+    items: BottomNavItem[] = [
+        {icon: 'home', label: 'Home', routerLink: ''},
+        {icon: 'camera_enhance', label: 'Sell', routerLink: 'search'},
+        {icon: 'forum', label: 'Forum', routerLink: 'forum'},
+      ];
 }

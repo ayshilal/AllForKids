@@ -32,6 +32,7 @@ export const mobileMenu: MobileMenuItem[] = [
         {type: 'link', label: 'Shop List',          url: '/shop/category-list'},
         {type: 'link', label: 'Shop Right Sidebar', url: '/shop/category-right-sidebar'},
         {type: 'link', label: 'Product',            url: '/shop/product-standard', children: [
+            {type: 'link', label: 'Product Create',     url: '/shop/product-create'},
             {type: 'link', label: 'Product',            url: '/shop/product-standard'},
             {type: 'link', label: 'Product Alt',        url: '/shop/product-columnar'},
             {type: 'link', label: 'Product Sidebar',    url: '/shop/product-sidebar'}

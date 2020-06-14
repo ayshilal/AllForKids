@@ -22,11 +22,9 @@
             <div *ngIf="sidebarPosition === 'start'" class="shop-layout__sidebar">
                 <app-product-sidebar></app-product-sidebar>
             </div>
-
             <div class="shop-layout__content">
                 <div class="block">
                     <app-product [product]="product" [layout]="layout"></app-product>
-
                     <app-product-tabs [withSidebar]="true"></app-product-tabs>
                 </div>
 

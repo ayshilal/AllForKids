@@ -15,7 +15,7 @@ import { PageOrderSuccessComponent } from './pages/page-order-success/page-order
 
 const categoryPageData: Data = {
     // Number of products per row. Possible values: 3, 4, 5.
-    columns: 3,
+    columns: 5,
     // Shop view mode by default. Possible values: 'grid', 'grid-with-features', 'list'.
     viewMode: 'grid',
     // Sidebar position. Possible values: 'start', 'end'.
@@ -169,6 +169,18 @@ const routes: Routes = [
         data: {
             layout: 'sidebar',
             sidebarPosition: 'start',
+            productSlug: 'brandix-screwdriver-screw1500acc',
+        },
+        resolve: {
+            product: ProductResolverService
+        },
+    },
+    {
+        path: 'product-create',
+        component: PageProductComponent,
+        data: {
+            layout: 'sidebar',
+            sidebarPosition: 'create',
             productSlug: 'brandix-screwdriver-screw1500acc',
         },
         resolve: {

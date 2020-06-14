@@ -37,7 +37,7 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
 import { ProductService } from './services/product.service';
 import { QueryOptions } from './serializer/queryoptions.serializer';
 import { AuthenticationService } from './services/authentication.service';
-
+import {BottomNavModule} from 'ngx-bottom-nav';
 @NgModule({
     declarations: [
         // components
@@ -65,7 +65,8 @@ import { AuthenticationService } from './services/authentication.service';
         MobileModule,
         SharedModule,
         WidgetsModule,
-        HttpClientModule
+        HttpClientModule,
+        BottomNavModule
     ],
     providers: [
         ProductService,
