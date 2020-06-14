@@ -12,6 +12,7 @@ import { ProductsListResolverService } from './resolvers/products-list-resolver.
 import { CategoryResolverService } from './resolvers/category-resolver.service';
 import { ProductResolverService } from './resolvers/product-resolver.service';
 import { PageOrderSuccessComponent } from './pages/page-order-success/page-order-success.component';
+import { PageCreateComponent } from './pages/page-create/page-create.component';
 
 const categoryPageData: Data = {
     // Number of products per row. Possible values: 3, 4, 5.
@@ -66,6 +67,10 @@ const routes: Routes = [
         path: 'cart/checkout',
         component: PageCheckoutComponent,
         canActivate: [CheckoutGuard],
+    },
+    {
+        path: 'cart/create',
+        component: PageCreateComponent,
     },
     {
         path: 'cart/checkout/success',
@@ -175,18 +180,7 @@ const routes: Routes = [
             product: ProductResolverService
         },
     },
-    {
-        path: 'product-create',
-        component: PageProductComponent,
-        data: {
-            layout: 'sidebar',
-            sidebarPosition: 'create',
-            productSlug: 'brandix-screwdriver-screw1500acc',
-        },
-        resolve: {
-            product: ProductResolverService
-        },
-    },
+    
     // --- END ---
 ];
 

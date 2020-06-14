@@ -120,5 +120,5 @@ export const navigation: NavigationLink[] = [
             {label: 'Change Password', url: '/account/password'}
         ]
     }},
-    {label: 'Create A Listing', url: 'https://themeforest.net/item/stroyka-tools-store-angular-7-template/23523630', external: true}
+    {label: 'Create A Listing', url: '/', external: true}
 ];

@@ -107,7 +107,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
     }
     @media (max-width: 479px) {
         @include local-layout(2, 8px, 6px);
-        @include ngx-bottom-nav-theme($theme);
     }
 }
 .products-list[data-layout="grid-5-full"] {
