@@ -28,18 +28,18 @@ namespace WebApi.Extensions.Category
 
         public static CategoryDtoEditModel ToEntity(this CategoryEditModel model)
         {
-            var bank = model.MapTo<CategoryEditModel, CategoryDtoEditModel>();
+            var category = model.MapTo<CategoryEditModel, CategoryDtoEditModel>();
             if (model.Id > 0)
             {
-                bank.LastUpdateDate = DateTime.Now;
-                bank.LastUpdateUserId = UserProfile.Current.UserID;
+                category.LastUpdateDate = DateTime.Now;
+                category.LastUpdateUserId = UserProfile.Current.UserID;
             }
             else
             {
-                bank.InsertDate = DateTime.Now;
-                bank.InsertUserId = UserProfile.Current.UserID;
+                category.InsertDate = DateTime.Now;
+                category.InsertUserId = UserProfile.Current.UserID;
             }
-            return bank;
+            return category;
         }
     }
 }

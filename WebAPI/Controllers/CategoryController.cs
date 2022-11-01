@@ -5,10 +5,11 @@ using Service.Category;
 using WebApi.Models.Category;
 
 using WebApi.Extensions.Category;
+using Microsoft.AspNetCore.Cors;
 
 namespace WebApi.Controllers
 {
-    //[EnableCors("AllowSpecificOrigin")]
+    [EnableCors("AllowSpecificOrigin")]
     [Route("api/[controller]")]
     //[Authorize]
 
@@ -18,7 +19,7 @@ namespace WebApi.Controllers
 
         public CategoryController(ICategoryRepository CategoryRepository)
         {
-            _CategoryRepository = CategoryRepository;
+          _CategoryRepository = CategoryRepository;
         }
 
         [HttpGet]

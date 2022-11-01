@@ -45,8 +45,9 @@ namespace WebApi
                                   });
             });
 
-            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            
+            services.AddDbContext<AppDBContext>(options => 
+            options.UseSqlServer(@"Data Source=tcp:afkdbserver.database.windows.net,1433;Initial Catalog=AFKDB;User Id=afkadmin@afkdbserver;Password=tJBX5zQg*jmYm7-;Trusted_Connection=False;Encrypt=True;"));
+
             services.AddControllers();
 
             AutoMapperConfiguration.Init();

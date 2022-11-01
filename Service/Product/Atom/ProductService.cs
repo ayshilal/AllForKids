@@ -31,7 +31,7 @@ namespace Service.Product.Atom
 
             var result = query.OrderByDescending(r => r.ID).Select(p => new ProductDtoViewModel
             {
-                //ID = p.ID,
+                //ID = p.ID,    
                 Name = p.Name,
             }).ToList();
 

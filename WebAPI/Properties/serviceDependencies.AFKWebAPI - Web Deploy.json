@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/afkdbserver/databases/AFKDB",
+      "type": "mssql.azure",
+      "connectionId": "DBConnection"
+    },
+    "cosmosdb1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.DocumentDB/databaseAccounts/afkwebapiaccount",
+      "type": "cosmosdb.azure",
+      "connectionId": "AFKConnectionString"
+    }
+  }
+}

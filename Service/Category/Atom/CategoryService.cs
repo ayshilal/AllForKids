@@ -23,6 +23,17 @@ namespace Service.Category.Atom
 
         public ResponseModel<CategoryDtoViewModel> GetAll(CategoryDtoSearchModel model)
         {
+
+            //Context.Database.EnsureCreated();
+
+            //var category = new EntityLibrary.Model.Category
+            //{
+            //    ID = 1,
+            //    Type = "ads",
+            //    Path = "wef"
+            //};
+            //Context.Category.Add(category);
+            //Context.SaveChanges();
             var query = Context.Category.AsQueryable();
 
             if (!string.IsNullOrEmpty(model.Slug))
@@ -43,6 +54,17 @@ namespace Service.Category.Atom
         }
         public List<CategoryDtoViewModel> Get(CategoryDtoSearchModel model)
         {
+
+            //Context.Database.EnsureCreated();
+
+            //var category = new EntityLibrary.Model.Category
+            //{
+            //    Type = "Baby",
+            //    Path = "Pants"
+            //};
+            //Context.Category.Add(category);
+            //Context.SaveChanges();
+
             var query = Context.Category.AsQueryable();
 
             if (!string.IsNullOrEmpty(model.Slug))
